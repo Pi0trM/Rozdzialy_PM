@@ -1,6 +1,8 @@
 Działania konserwacyjne
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+Autor: Piotr Mikołajczyk
+
 Uruchamianie, zatrzymywanie i restartowanie serwera bazy danych należy wcześniej zaplanować. Działanie te muszą zostać przeprowadzone w czasie, gdy mamy pewność, że żaden klient nie będzie podłączony, nie będą przeprowadzane żadne transakcje. Użytkownicy powinni być uprzednio poinformowani o czasie przeprowadzenia konserwacji. Mimo to, należy wcześniej sprawdzić, czy nie ma aktywnych sesji.
 
 Uruchamianie
