@@ -24,4 +24,20 @@ Usuwa martwe wiersze i przeprowadza aktualizację statystyk, nie odzyskuje miejs
 Autovacuum
 ^^^^^^^^^^
 
-Autovacuum działa w tle, automatycznie wykonując VACUUM na odpowiednich tabelach. Dzięki niemu nie trzeba ręcznie uruchamiać VACUUM po każdej modyfikacji tabeli.
+Autovacuum działa w tle, automatycznie wykonując VACUUM na odpowiednich tabelach. Dzięki niemu nie trzeba ręcznie uruchamiać VACUUM po każdej modyfikacji tabeli. Autovacuum posiada wiele parametrów, od których zależy kiedy wykonany zostanie proces, między innymi:
+
+1. autovacuum - parametr logiczny, decyduje, czy serwer będzie uruchamiał launcher procesu autovacuum,
+
+2. autovacuum_max_workers - liczba całkowita, określa maksymalną ilość procesów autovacuum mogących działać w tym samym czasie, domyślnie 3,
+
+3. autovacuum_vacuum_threshold - liczba całkowita, określa ile wierszy w jednej tabeli musi zostać usunięte lub zmienione, aby wywołano VACUUM, domyślnie 50,
+
+4. autovacuum_vacuum_scale_factor - liczba zmiennoprzecinkowa, jaki procent tabeli musi zostać zmieniony aby wywołano VACUUM, domyślna wartość to 0.2 (20%).
+
+Analogiczne parametry warunkują również wywołanie ANALYZE, na przykład autovacuum_analyze_threshold.
+
+Próg uruchamiania VACUUM ustala się wzorem:
+	autovacuum_vacuum_threshold + autovacuum_vacuum_scale_factor * liczba_wierszy
+	
+Podobnie dla ANALYZE:
+	autovacuum_analyze_threshold + autovacuum_analyze_scale_factor * liczba_wierszy
