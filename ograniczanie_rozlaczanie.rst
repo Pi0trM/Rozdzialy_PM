@@ -10,18 +10,6 @@ Ograniczanie użytkowników
 
 Istnieje kilka sposobów ograniczenia dostępu użytkownika:
 
-- Zablokowanie logowania:
-
-	.. code-block:: sql
-
-		ALTER ROLE user NOLOGIN;
-
-	Odblokowanie:
-
-	.. code-block:: sql
-
-		ALTER ROLE user LOGIN;
-
 - Odebranie użytkownikowi prawa dostępu do bazy:
 
 	.. code-block:: sql
@@ -75,4 +63,27 @@ Sesja użytkownika lub jego zapytania mogą zostać rozłączone automatycznie, 
 	.. code-block:: sql
 
 		ALTER ROLE user SET statement_timeout = '30s';
+
+Zapobieganie nowym połączeniom
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Zablokowanie logowania konkretnego użytkownika:
+
+	.. code-block:: sql
+
+		ALTER ROLE user NOLOGIN;
+
+	Odblokowanie:
+
+	.. code-block:: sql
+
+		ALTER ROLE user LOGIN;
+
+Blokowanie nowych połączeń do bazy danych:
+
+	.. code-block:: sql
+
+		REVOKE CONNECT ON DATABASE baza FROM PUBLIC;
+	
+	PUBLIC oznacza wszystkich użytkowników. Nadal połączeni użytkownicy nie są rozłączani.
 
