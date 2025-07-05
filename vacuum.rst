@@ -3,7 +3,7 @@ Proces VACUUM
 
 Autor: Piotr Mikołajczyk
 
-DELETE nie usuwa rekordów z tabeli, jedynie oznacza je jako martwe. Podobnie UPDATE pozostawia stare wersje zaktualizowanych wierszy.
+DELETE nie usuwa rekordów z tabeli, jedynie oznacza je jako martwe. Podobnie UPDATE pozostawia stare wersje zaktualizowanych krotek.
 
 Proces VACUUM przeszukuje tabele i indeksy, szukając martwych wierszy, które można fizycznie usunąć lub oznaczyć do nadpisania.
 
@@ -13,7 +13,7 @@ Może zostać przeprowadzony na kilka sposobów:
 
 	VACUUM;
 
-Usuwa martwe wiersze, ale nie odzyskuje miejsca z dysku, a jedynie udostępnia je dla przyszłych danych,
+Usuwa martwe krotki, ale nie odzyskuje miejsca z dysku, a jedynie udostępnia je dla przyszłych danych,
 
 .. code-block:: sql
 
@@ -25,7 +25,7 @@ Kompaktuje tabelę do nowego pliku, zwalnia miejsce w pamięci,
 
 	VACUUM ANALYZE
 
-Usuwa martwe wiersze i przeprowadza aktualizację statystyk, nie odzyskuje miejsca.
+Usuwa martwe krotki i przeprowadza aktualizację statystyk, nie odzyskuje miejsca.
 
 Autovacuum
 ^^^^^^^^^^
