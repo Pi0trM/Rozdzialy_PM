@@ -43,7 +43,9 @@ Autovacuum działa w tle, automatycznie wykonując VACUUM na odpowiednich tabela
 Analogiczne parametry warunkują również wywołanie ANALYZE, na przykład autovacuum_analyze_threshold.
 
 Próg uruchamiania VACUUM ustala się wzorem:
+
 	autovacuum_vacuum_threshold + autovacuum_vacuum_scale_factor * liczba_wierszy
 	
 Podobnie dla ANALYZE:
+
 	autovacuum_analyze_threshold + autovacuum_analyze_scale_factor * liczba_wierszy
