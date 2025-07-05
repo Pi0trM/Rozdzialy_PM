@@ -1,6 +1,8 @@
 Planowanie konserwacji bazy danych
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Autor: Piotr Mikołajczyk
+
 Konserwację bazy danych należy przeprowadzać regularnie, np. co tydzień lub co miesiąc. Nie powinna mieć miejsca w godzinach szczytu. Przeprowadzenie konserwacji może również okazać się koniecznie po wykryciu błędu lub wystąpieniu awarii.
 
 Konserwacja może obejmować m.in. zmianę parametrów konfiguracji bazy, przeprowadzenie procesu VACUUM, zmianę uprawnien użytkowników, aktualizacje systemowe i wykonanie backupów lub przywrócenie danych.
